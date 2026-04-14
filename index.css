@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --accent-color: #c8f565;
+  --bg-color: #0d0d0d;
+  --surface-color: #161616;
+  --surface-hover-color: #1e1e1e;
+  --border-color: #2a2a2a;
+  --text-main-color: #f0ece3;
+  --text-muted-color: #888;
+}
+
+:root.light {
+  --bg-color: #f8f9fa;
+  --surface-color: #ffffff;
+  --surface-hover-color: #f1f3f5;
+  --border-color: #dee2e6;
+  --text-main-color: #212529;
+  --text-muted-color: #6c757d;
+}
+
+@theme {
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--bg-color);
+  --color-surface: var(--surface-color);
+  --color-surface-hover: var(--surface-hover-color);
+  --color-border-custom: var(--border-color);
+  --color-accent: var(--accent-color);
+  --color-accent-secondary: #7de8c8;
+  --color-text-main: var(--text-main-color);
+  --color-text-muted: var(--text-muted-color);
+  --color-danger: #ff5c5c;
+
+  /* Tints for accent */
+  --color-accent-t06: color-mix(in srgb, var(--accent-color), transparent 94%);
+  --color-accent-t08: color-mix(in srgb, var(--accent-color), transparent 92%);
+  --color-accent-t12: color-mix(in srgb, var(--accent-color), transparent 88%);
+  --color-accent-t15: color-mix(in srgb, var(--accent-color), transparent 85%);
+  --color-accent-t20: color-mix(in srgb, var(--accent-color), transparent 80%);
+  --color-accent-t30: color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+@layer base {
+  html {
+    font-size: 15px;
+    overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  
+  html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+  
+  body {
+    @apply bg-background text-text-main font-sans min-h-screen antialiased;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
+  * {
+    @apply border-border-custom;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom Animations from original CSS */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes spin-ring {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-ring 10s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spin-ring 18s linear infinite reverse;
+}
+
