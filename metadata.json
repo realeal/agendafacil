@@ -1,0 +1,5 @@
+{
+  "name": "agendafacil --- Sis",
+  "description": "Sistema completo de agendamentos online com gestão de banners, FAQ, horários de funcionamento e painel administrativo premium, integrado com Supabase.",
+  "requestFramePermissions": []
+}
